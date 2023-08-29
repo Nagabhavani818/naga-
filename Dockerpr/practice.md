@@ -1,20 +1,11 @@
-### What is Docker ?
+#### What is Docker ?
+
+* Docker is an open-source project that automates the deployment of
+applications inside software containers
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-### create instance
+#### create instance
 * To install docker
 * docker script:- 
 curl -fsSL https://get.docker.com -o install-docker.sh
@@ -22,13 +13,13 @@ sudo sh install-docker.sh
 exit
 relogin
 
-# check docker config
-# docker --version
+## check docker config
+## docker --version
 clint will be conneting to server
 * then start working
-# installing tomcat
+## installing tomcat
 
-# commands
+## commands
 ```
 sudo apt update
 sudo apt install net-tools openjdk-11-jdk tomcat9 -y
@@ -56,6 +47,40 @@ mvn package
 java -jar target/spring-petclinic-3.0.0-SNAPSHOT.jar
 ```
 ![Priview](./Images/docker2.png)
-![Priview](./Docker3.png)
+![Priview](./Imagaes/Docker3.png)
+![Preview](./Images/docker4.png)
+
+* vi docker
+by writing docker file we can run number of container
+
+### Containerization
+* For containerization I did 3 things to run the application
+1. what we required to run application
+2. What are the steps to start the application
+2. What are the ports  our application can be access 
+
+* Inside the container we never run a sever side application not for clinet side application
+
+* Docker containers are meant for server side applications not for client side applications 
+* -it means Interactive with Terminal
+
+### Comnamds:-
+* docker container ls -a 
+=> shows all the containers
+* docker container ls -a -q
+=> shows all the containers Id
+* rm stands for remove
+* -f stands for forcefully
+* To remove the all the containers at a time. We have to use this command.
+* docker container rm -f $(docker container ls -a -q) 
 
 
+=>docker images doesn't having running or stopig state
+* Lets remove all the images docker image rm -f $(docker image ls -q)
+
+* docker image 
+=> Lets create a container and login into that during running the container. Lets use alpine and ubuntu docker image
+
+ docker container run --name myhttpd1
+ docker container run --name -d myhttpd1
+ docker container run --name myhttpd2 -p 32000:80 -d httpd
