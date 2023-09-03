@@ -50,6 +50,7 @@ java -jar target/spring-petclinic-3.0.0-SNAPSHOT.jar
 ![Priview](./Imagaes/Docker3.png)
 ![Preview](./Images/docker4.png)
 
+
 * vi docker
 by writing docker file we can run number of container
 
@@ -64,7 +65,7 @@ by writing docker file we can run number of container
 * Docker containers are meant for server side applications not for client side applications 
 * -it means Interactive with Terminal
 
-### Comnamds:-
+### Commands:-
 * docker container ls -a 
 => shows all the containers
 * docker container ls -a -q
@@ -75,12 +76,41 @@ by writing docker file we can run number of container
 * docker container rm -f $(docker container ls -a -q) 
 
 
-=>docker images doesn't having running or stopig state
+ docker container run --name myhttpd1
+ docker container run --name -d myhttpd1
+ docker container run --name myhttpd2 -p 32000:80 -d httpd
+
+* docker images doesn't having running or stopig state
 * Lets remove all the images docker image rm -f $(docker image ls -q)
 
 * docker image 
 => Lets create a container and login into that during running the container. Lets use alpine and ubuntu docker image
 
- docker container run --name myhttpd1
- docker container run --name -d myhttpd1
- docker container run --name myhttpd2 -p 32000:80 -d httpd
+* Docker container can be executed in 3 ways
+  detached
+  attached
+  interactive
+
+ * Lets create the nginx container in detached mode -d 
+ * in attached mode we can see standard input,output,error.
+ * IN detached mode the container will be started in the backgroung
+  $docker container run -d --name nginxd nginx
+![Preview](./Images/docker5.png)
+
+* Lets create the nginx container in attached mode.
+* it runs in the background 
+* In attaches the container will exited when we entier ctrl+c
+  * $ docker container run --name nginxa nginx
+ ![Preview](./Images/docker6.png)
+
+ * Let create some images in interactive mode -it
+ * interactive mode where we inside the container and try to execute something
+ * docker container run -it --name alpint alpine /bin/sh
+ * docker container run -it name ubnint ununtu /bin/bash
+![Preview](./Images/docker7.png)
+
+* Use exec of the docker container command 
+![preview](./Images/docker8.png)
+
+
+
