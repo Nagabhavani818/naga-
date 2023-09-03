@@ -1,5 +1,6 @@
-#### What is Docker ?
+## What is Docker ?
 
+* Docker (dock worker) is used to create containers which is standard way of packaging any application
 * Docker is an open-source project that automates the deployment of
 applications inside software containers
 
@@ -13,13 +14,13 @@ sudo sh install-docker.sh
 exit
 relogin
 
-## check docker config
-## docker --version
+#### check docker config
+#### docker --version
 clint will be conneting to server
 * then start working
-## installing tomcat
+#### installing tomcat
 
-## commands
+#### commands
 ```
 sudo apt update
 sudo apt install net-tools openjdk-11-jdk tomcat9 -y
@@ -32,7 +33,7 @@ sudo systemctl status tomcat9
 ```
 ![Peview](./Images/docker1.png)
 
-# Springpetclinc application
+## Springpetclinc application
 * This is spring pet clinic application
 * Lets try to run this application on linux
 * 
@@ -87,9 +88,9 @@ by writing docker file we can run number of container
 => Lets create a container and login into that during running the container. Lets use alpine and ubuntu docker image
 
 * Docker container can be executed in 3 ways
-  detached
-  attached
-  interactive
+  1.detached
+  2.attached
+  3.interactive
 
  * Lets create the nginx container in detached mode -d 
  * in attached mode we can see standard input,output,error.
@@ -101,12 +102,12 @@ by writing docker file we can run number of container
 * it runs in the background 
 * In attaches the container will exited when we entier ctrl+c
   * $ docker container run --name nginxa nginx
- ![Preview](./Images/docker6.png)
+![Preview](./Images/docker6.png)
 
  * Let create some images in interactive mode -it
  * interactive mode where we inside the container and try to execute something
- * docker container run -it --name alpint alpine /bin/sh
- * docker container run -it name ubnint ununtu /bin/bash
+   * $ docker container run -it --name alpint alpine /bin/sh
+   * $ docker container run -it name ubnint ununtu /bin/bash
 ![Preview](./Images/docker7.png)
 
 * Use exec of the docker container command 
