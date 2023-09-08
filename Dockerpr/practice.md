@@ -113,5 +113,12 @@ by writing docker file we can run number of container
 * Use exec of the docker container command 
 ![preview](./Images/docker8.png)
 
+* We can execute interactive commands by using shell
+![preview](./Images/docker9.png)
 
+* Now we are creating container in -it mode 
+* once we exit from container than that container will be notwork and even don't show in container list.
+![preview](./Images/docker10.png)
+
+*  FROM is used only to set  the base image
 
