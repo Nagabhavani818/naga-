@@ -120,5 +120,33 @@ by writing docker file we can run number of container
 * once we exit from container than that container will be notwork and even don't show in container list.
 ![preview](./Images/docker10.png)
 
-*  FROM is used only to set  the base image
+
+![refer here](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance#example-usage)
+
+* This is not a useful approach as we are creating images manually
+    * Docker has a better way i.e. Dockerfile
+
+   *  Workflow
+   ![preview](./Images/docker11.png)
+
+  ### Basic Instructions:
+* FROM: use tag all the time (donot use latest)
+* RUN: The commands to be executed while building the image to install/configure your appliation.
+* CMD: This command will be executed while starting the container.
+* EXPOSE: This adds ports to be exposed while starting the container 
+
+### Springpetclinic Dockerfile
+* Lets do two ways
+  * use any image with java11 already as base image amazoncorretto:11
+  * use any image with slim os as base image alpine:3
+
+### Dockerfile- based on amazoncorreto:11
+
+* FROM amazoncorretto:11
+* RUN curl https://referenceapplicationskhaja.s3.us-west-2.amazonaws.com/spring-petclinic-2.4.2.jar -o spring-petclinic-2.4.2.jar
+* EXPOSE 8080
+* CMD ["java", "-jar", "spring-petclinic-2.4.2.jar"]
+
+  * Lets build the image based on amazoncorreto
+  
 
